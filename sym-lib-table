@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name DIP28)(type Legacy)(uri ${KIPRJMOD}/lib/ul_9-1437539-2/9-1437539-2.lib)(options "")(descr ""))
+  (lib (name FPD_Driver)(type Legacy)(uri ${KIPRJMOD}/lib/ul_max6921aui/max6921aui.lib)(options "")(descr ""))
+  (lib (name Voltage_Regulator)(type Legacy)(uri ${KIPRJMOD}/lib/ul_LT3008ETS8-3-3-PBF/2022-02-06_23-12-44.lib)(options "")(descr ""))
+)
