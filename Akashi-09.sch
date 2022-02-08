@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
+Title "Akashi-09"
 Date "lun. 30 mars 2015"
-Rev ""
+Rev "1.0.0"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -45,17 +45,6 @@ F 3 "" H 9600 1900 50  0000 C CNN
 $EndComp
 Text Label 8650 1800 0    60   ~ 0
 nRESET
-$Comp
-L power:+3.3V #PWR01
-U 1 1 56D70538
-P 9150 1450
-F 0 "#PWR01" H 9150 1300 50  0001 C CNN
-F 1 "+3.3V" V 9150 1700 50  0000 C CNN
-F 2 "" H 9150 1450 50  0000 C CNN
-F 3 "" H 9150 1450 50  0000 C CNN
-	1    9150 1450
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR03
 U 1 1 56D70CC2
@@ -153,14 +142,12 @@ Wire Notes Line
 Wire Notes Line
 	9925 825  9925 475 
 Wire Wire Line
-	9400 1900 9150 1900
+	9400 1900 8650 1900
 Wire Wire Line
 	9400 2100 9300 2100
 Wire Wire Line
 	9400 2200 9300 2200
 Connection ~ 9300 2200
-Wire Wire Line
-	9150 1900 9150 1450
 $Comp
 L Connector_Generic:Conn_01x10 P3
 U 1 1 56D721E0
@@ -1174,7 +1161,7 @@ L Device:R R16
 U 1 1 6257FC45
 P 1650 6250
 F 0 "R16" V 1443 6250 50  0000 C CNN
-F 1 "R" V 1534 6250 50  0000 C CNN
+F 1 "1k" V 1534 6250 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder" V 1580 6250 50  0001 C CNN
 F 3 "~" H 1650 6250 50  0001 C CNN
 	1    1650 6250
@@ -1307,23 +1294,12 @@ Wire Wire Line
 Text Label 8300 4250 0    50   ~ 0
 nRESET
 NoConn ~ 9400 2000
-$Comp
-L Jumper:Jumper_3_Open JP3
-U 1 1 627C34D3
-P 3750 5300
-F 0 "JP3" H 3750 5524 50  0000 C CNN
-F 1 "Jumper_3_Open" H 3750 5433 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 3750 5300 50  0001 C CNN
-F 3 "~" H 3750 5300 50  0001 C CNN
-	1    3750 5300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	4000 5300 6150 5300
+	3850 5300 6150 5300
 Wire Wire Line
 	6150 5300 6150 5900
 Wire Wire Line
-	3500 5300 1100 5300
+	3650 5300 1100 5300
 Wire Wire Line
 	1100 5300 1100 5650
 $Comp
@@ -1338,12 +1314,12 @@ F 3 "" H 3750 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3750 5550 3750 5450
+	3750 5550 3750 5300
 $Comp
-L Jumper:Jumper_2_Open JP5
+L Jumper:Jumper_2_Open JP3
 U 1 1 62815C08
 P 1650 5900
-F 0 "JP5" H 1650 6135 50  0000 C CNN
+F 0 "JP3" H 1650 6135 50  0000 C CNN
 F 1 "Jumper_2_Open" H 1650 6044 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1650 5900 50  0001 C CNN
 F 3 "~" H 1650 5900 50  0001 C CNN
@@ -1360,4 +1336,99 @@ Text Label 1600 4000 0    50   ~ 0
 VBB
 Text Label 1300 5900 0    50   ~ 0
 VBB
+$Comp
+L Connector:Conn_01x03_Male J2
+U 1 1 628C8CBE
+P 3750 5100
+F 0 "J2" V 3812 5244 50  0000 L CNN
+F 1 "Conn_01x03_Male" V 3903 5244 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 3750 5100 50  0001 C CNN
+F 3 "~" H 3750 5100 50  0001 C CNN
+	1    3750 5100
+	0    1    1    0   
+$EndComp
+Text Notes 7050 7000 0    50   ~ 0
+Note 1 : Short 1-2 of JP1 and JP2 to use on board regulator. Short 2-3 for external regulrator. \nNote 2: Install JP3 for normal use. Remove it for current measurement. \nNote 3 : R16 is for decoupling. If not needed, short JP4\nNote 4 : Cut 3.3V of the base board.
+Text Notes 3900 5600 0    50   ~ 0
+1 : 3.3V In\n2 : GND\n3 : 25V out
+$Comp
+L Device:D D10
+U 1 1 6295E5A1
+P 7350 6150
+F 0 "D10" H 7450 6100 50  0000 C CNN
+F 1 "D" H 7250 6100 50  0000 C CNN
+F 2 "Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7350 6150 50  0001 C CNN
+F 3 "~" H 7350 6150 50  0001 C CNN
+	1    7350 6150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6800 6150 7050 6150
+Connection ~ 6800 6150
+Wire Wire Line
+	7500 6150 7600 6150
+$Comp
+L Jumper:SolderJumper_2_Open JP5
+U 1 1 6298169D
+P 7350 6350
+F 0 "JP5" H 7350 6450 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 7150 6200 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 7350 6350 50  0001 C CNN
+F 3 "~" H 7350 6350 50  0001 C CNN
+	1    7350 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7500 6350 7600 6350
+Wire Wire Line
+	7600 6350 7600 6150
+Connection ~ 7600 6150
+Wire Wire Line
+	7600 6150 7800 6150
+Wire Wire Line
+	7200 6350 7050 6350
+Wire Wire Line
+	7050 6350 7050 6150
+Connection ~ 7050 6150
+Wire Wire Line
+	7050 6150 7200 6150
+Text Label 7700 6150 0    50   ~ 0
+BASE_3.3V
+Text Label 8700 1900 0    50   ~ 0
+BASE_3.3V
+$Comp
+L Connector:TestPoint TP2
+U 1 1 629E7C46
+P 7050 6150
+F 0 "TP2" H 7108 6268 50  0000 L CNN
+F 1 "TestPoint" H 7108 6177 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 7250 6150 50  0001 C CNN
+F 3 "~" H 7250 6150 50  0001 C CNN
+	1    7050 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP1
+U 1 1 629E9B3E
+P 6250 7000
+F 0 "TP1" H 6308 7118 50  0000 L CNN
+F 1 "TestPoint" H 6308 7027 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Loop_D1.80mm_Drill1.0mm_Beaded" H 6450 7000 50  0001 C CNN
+F 3 "~" H 6450 7000 50  0001 C CNN
+	1    6250 7000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0122
+U 1 1 629EB269
+P 6250 7100
+F 0 "#PWR0122" H 6250 6850 50  0001 C CNN
+F 1 "GND" H 6255 6927 50  0000 C CNN
+F 2 "" H 6250 7100 50  0001 C CNN
+F 3 "" H 6250 7100 50  0001 C CNN
+	1    6250 7100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 7100 6250 7000
 $EndSCHEMATC
