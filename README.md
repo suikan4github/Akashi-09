@@ -27,3 +27,7 @@ Cut the 3.3V regulator of the Nucleo to measure the current of the STM32G0B1RE. 
 
 ## LICENSE
 This board is licensed under [CC0](LICENSE).
+
+## Photo
+![](image/PXL_20220227_124331210.jpg)
+![](image/PXL_20220227_131210910.jpg)
