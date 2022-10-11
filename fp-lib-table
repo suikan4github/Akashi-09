@@ -1,0 +1,6 @@
+(fp_lib_table
+  (lib (name Socket_Arduino_Uno)(type KiCad)(uri "$(KIPRJMOD)/Socket_Arduino_Uno.pretty")(options "")(descr ""))
+  (lib (name DIP28)(type KiCad)(uri ${KIPRJMOD}/lib/ul_9-1437539-2)(options "")(descr ""))
+  (lib (name FPD_Driver)(type KiCad)(uri ${KIPRJMOD}/lib/ul_max6921aui)(options "")(descr ""))
+  (lib (name Voltage_Regulator)(type KiCad)(uri ${KIPRJMOD}/lib/ul_LT3008ETS8-3-3-PBF)(options "")(descr ""))
+)
